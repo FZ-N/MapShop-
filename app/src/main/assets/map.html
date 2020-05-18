@@ -1,0 +1,213 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+
+    <title>MAPSHOP</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #map {
+            width: 550px;
+            height: 550px;
+        }
+    </style>
+
+
+</head>
+<body>
+<input type="text" id="myText" value="">
+<button onclick="myF()" id ="myButton"><center><h1 style="color:blue">Afficher</h1></center></button>
+<a id="new" href="beforemap.html"></a>
+<div id='map'></div>
+<script>
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyD4a2nwbckoIq9j9PPocNDO1gHMdLnfPeI",
+            authDomain: "mapshop-140e1.firebaseapp.com",
+            databaseURL: "https://mapshop-140e1.firebaseio.com",
+            projectId: "mapshop-140e1",
+            storageBucket: "mapshop-140e1.appspot.com",
+            messagingSenderId: "883129649485",
+            appId: "1:883129649485:web:7a459caa1e24541cdc8f04",
+            measurementId: "G-D50ZKZTVED"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        var map = L.map('map', {
+            crs: L.CRS.Simple,
+            center: [240, 250],
+            zoom: 1,
+            zoomControl: false
+        });
+        function myF() {
+            var mapid = document.getElementById("myText").value;;
+            console.log(mapid);
+
+
+            const li = document.getElementById(mapid);
+            const dbrefob = firebase.database().ref().child(mapid);
+            //   dbrefob.on('value', snap => document.write(snap.val()));
+
+
+
+
+            map.setZoom(-1);
+            var yx = L.latLng;
+
+            var xy = function (x, y) {
+                if (L.Util.isArray(x)) {    // When doing xy([x, y]);
+                    return yx(x[1], x[0]);
+                }
+                return yx(y, x);  // When doing xy(x, y);
+            };
+
+            var bounds = [xy(-25, -26.5), xy(500, 500)];
+            var image = L.imageOverlay('uqm_map_full.png', bounds).addTo(map);
+
+
+            var A = xy(135.2, 115.0);
+            var B = xy(73, -5.1);
+            var C = xy(8.4, 40.5);
+            var D = xy(105.7, 48.3);
+            var E = xy(264.7, 70.3);
+            var F = xy(364.7, -14);
+            var G = xy(478, 30);
+            var H = xy(464.7, 222);
+            var I = xy(280.7, 155);
+            var J = xy(377, 155);
+            var K = xy(475, 388);
+            var Q = xy(475, 488.3);
+            var M = xy(327, 250.3);
+            var N = xy(316.7, 320.3);
+            var O = xy(334.7, 410.3);
+            var P = xy(354.7, 480.3);
+            var Start = xy(13.6, 170.1);
+            var finish1 = xy(77.6, 330.1);
+            var finish3 = xy(77.6, 425.1);
+            var finish4 = xy(77.6, 485.1);
+            var finish2 = xy(77.6, 385.1);
+
+            L.circle([170.1, 13.6], 10, {
+                color: 'yellow',
+                fillColor: '#f03',
+                fillOpacity: 0.5
+            }).addTo(map).bindPopup(".");
+
+
+
+            //L.polyline([A, C]).addTo(map);
+            //L.polyline([A, H]).addTo(map);
+
+            map.setView(xy(120, 70), 1);
+
+
+
+            function OLO(list) {
+
+                var min = -10;
+                var caisse = 1;
+                firebase.database().ref().child("caisse1").on('value', (snap) => {
+                    reslt = snap.val();
+                    min = reslt;
+                    firebase.database().ref().child("caisse2").on('value', (snap) => {
+                        reslt = snap.val();
+                        if (reslt < min) {
+                            min = reslt;
+                            caisse = 2;
+                        }
+
+
+                    });
+
+                    firebase.database().ref().child("caisse3").on('value', (snap) => {
+                        reslt = snap.val();
+                        if (reslt < min) {
+                            min = reslt;
+                            caisse = 3;
+                        }
+
+                    });
+
+                    firebase.database().ref().child("caisse4").on('value', (snap) => {
+                        reslt = snap.val();
+                        if (reslt < min) {
+                            min = reslt;
+                            caisse = 4;
+                        }
+                        L.polyline([eval(list[list.length - 1]), eval("finish" + caisse)]).addTo(map);
+                        L.circle(eval("finish" + caisse), 15, {
+                            color: 'red',
+                            fillColor: '#f03',
+                            fillOpacity: 0.5
+                        }).addTo(map).bindPopup("La caisse la moins chargée");
+
+                    });
+
+                });
+
+                L.polyline([Start, eval(list[0])]).addTo(map);
+
+                if (list.includes("A")) { L.marker(A).addTo(map).bindPopup('Higiene'); }
+                if (list.includes("D")) { L.marker(D).addTo(map).bindPopup('Livres'); }
+                if (list.includes("B")) { L.marker(B).addTo(map).bindPopup('Poisson'); }
+                if (list.includes("C")) { L.marker(C).addTo(map).bindPopup('Pain'); }
+                if (list.includes("E")) { L.marker(E).addTo(map).bindPopup('Fruits'); }
+                if (list.includes("F")) { L.marker(F).addTo(map).bindPopup('Legumes'); }
+                if (list.includes("G")) { L.marker(G).addTo(map).bindPopup('Viande'); }
+                if (list.includes("J")) { L.marker(J).addTo(map).bindPopup('Cremerie'); }
+                if (list.includes("I")) { L.marker(I).addTo(map).bindPopup('Epicerie'); }
+                if (list.includes("H")) { L.marker(H).addTo(map).bindPopup('Patisserie'); }
+                if (list.includes("K")) { L.marker(K).addTo(map).bindPopup('Fromagerie'); }
+                if (list.includes("Q")) { L.marker(Q).addTo(map).bindPopup('Produits laitiers'); }
+                if (list.includes("M")) { L.marker(M).addTo(map).bindPopup('Beauté'); }
+                if (list.includes("N")) { L.marker(N).addTo(map).bindPopup('IT'); }
+                if (list.includes("O")) { L.marker(O).addTo(map).bindPopup('Santé'); }
+                if (list.includes("P")) { L.marker(P).addTo(map).bindPopup('Boissons'); }
+
+                var i;
+                for (i = 0; i < list.length; i++) {
+
+                    L.polyline([eval(list[i]), eval(list[i + 1])]).addTo(map);
+                }
+            }
+            dbrefob.on('value', (snap) => {
+                OLO(snap.val());
+            });
+
+
+
+            var div = document.getElementById('myText');
+            var but= document.getElementById('myButton');
+            var down = document.getElementById('new');
+            div.parentNode.removeChild(div);
+            but.parentNode.removeChild(but);
+            down.innerHTML = "Afficher une autre Map";
+        }
+
+    </script>
+
+
+
+</body>
+</html>

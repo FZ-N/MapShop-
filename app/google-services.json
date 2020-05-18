@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "883129649485",
+    "firebase_url": "https://mapshop-140e1.firebaseio.com",
+    "project_id": "mapshop-140e1",
+    "storage_bucket": "mapshop-140e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883129649485:android:110293a1671ba991dc8f04",
+        "android_client_info": {
+          "package_name": "com.example.mapshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883129649485-t9pboo3dln42b7k6a0f4ssmfp74h0acr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mapshop",
+            "certificate_hash": "50d05ee40a6d1c41f13492ac5019b6f2bad65cd8"
+          }
+        },
+        {
+          "client_id": "883129649485-5m3hlekpmd1ta7rtfqn9sq05j6b7011i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0su5n5SUGDAq-iZQXLJMuK0aAEWrzU9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883129649485-5m3hlekpmd1ta7rtfqn9sq05j6b7011i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

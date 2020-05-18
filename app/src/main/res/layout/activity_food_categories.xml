@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Food_categories">
+    <!-- try to test commit -->
+
+
+    <TextView
+        android:id="@+id/slogan_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:text="ALIMENTATION"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linear1_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/slogan_category"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="10dp">
+
+        <ImageView
+            android:id="@+id/veg_fruits"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/veg1"
+            android:layout_marginRight="45dp"/>
+
+        <ImageView
+            android:id="@+id/meat_fish"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/food1" />
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/linear2_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear1_category_layout"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp">
+
+        <ImageView
+            android:id="@+id/laitrie"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/milk1"
+            android:layout_marginRight="45dp"
+            />
+
+        <ImageView
+            android:id="@+id/boulangerie"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/boulangerie"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/linear3_category_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear2_category_layout"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="45dp">
+
+        <ImageView
+            android:id="@+id/cream"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/cream"
+            android:layout_marginRight="45dp"
+            />
+
+        <ImageView
+            android:id="@+id/epecrie"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/epecrie"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
