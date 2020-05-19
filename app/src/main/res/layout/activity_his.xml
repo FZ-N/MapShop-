@@ -11,7 +11,7 @@
         android:id="@+id/rl11"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="#131a46"
         android:layout_alignParentTop="true">
 
         <TextView
@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
+        android:background="#131a46"
         android:text="BACK"
         android:textColor="@android:color/white"
         android:textSize="20dp" />

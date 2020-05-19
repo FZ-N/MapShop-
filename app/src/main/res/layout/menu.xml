@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_horizontal|center_vertical"
             android:text="Bienvenue à MapShop"
-            android:textColor="#000086"
+            android:textColor="#131a46"
             android:textSize="36sp"
             android:textStyle="bold" />
 
@@ -89,7 +89,7 @@
             android:textColor="#ffffff"
             android:textSize="20sp" />
 
-        .
+
 
     </LinearLayout>
 

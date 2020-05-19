@@ -28,7 +28,7 @@
             android:layout_gravity="center|center_horizontal|center_vertical"
             android:layout_marginBottom=".0dp"
             android:text="Mon compte"
-            android:textColor="#000086"
+            android:textColor="#131a46"
             android:textSize="36sp"
             android:textStyle="bold" />
 
@@ -42,7 +42,8 @@
         android:paddingLeft="12px"
         android:text="Nom et prénom"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#131a46"/>
 
     <EditText
         android:id="@+id/prenom"
@@ -57,7 +58,8 @@
         android:paddingLeft="12px"
         android:text="Adresse"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#131a46"/>
 
     <EditText
         android:id="@+id/adr"
@@ -73,7 +75,8 @@
         android:paddingLeft="12px"
         android:text="Sexe"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#131a46"/>
 
 
     <RadioGroup
@@ -86,14 +89,16 @@
             android:layout_width="149dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="90dp"
-            android:text="Homme" />
+            android:text="Homme"
+            android:textColor="#131a46"/>
 
         <RadioButton
             android:id="@+id/f"
             android:layout_width="129dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="90dp"
-            android:text="Femme" />
+            android:text="Femme"
+            android:textColor="#131a46"/>
 
     </RadioGroup>
 
@@ -105,7 +110,8 @@
         android:paddingLeft="12px"
         android:text="Age"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#131a46"/>
 
     <EditText
         android:id="@+id/age"
@@ -122,7 +128,8 @@
         android:paddingLeft="12px"
         android:text="Mail"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#131a46"/>
 
     <EditText
         android:id="@+id/mail"
@@ -139,7 +146,8 @@
         android:paddingLeft="12px"
         android:text="Password "
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="#131a46"/>
 
     <EditText
         android:id="@+id/pwd"
@@ -173,12 +181,12 @@
         <TextView
             android:id="@+id/message"
             android:layout_width="179dp"
-            android:layout_height="wrap_content"
+            android:layout_height="63dp"
             android:layout_marginTop="10dp"
             android:paddingTop="20dp"
             android:shadowColor="#020E3D"
             android:text="Nous contacter"
-            android:textColor="#001067"
+            android:textColor="#f8a931"
             android:textSize="16dp"
             android:textStyle="bold" />
 
