@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -32,7 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class Moncompte extends AppCompatActivity implements View.OnClickListener {
-
+    TextView mCreateBtn;
     private ImageView logout;
     private ImageView logo;
     private EditText prenom;
@@ -64,6 +65,7 @@ public class Moncompte extends AppCompatActivity implements View.OnClickListener
         save = findViewById(R.id.save);
         adr = findViewById(R.id.adr);
         age = findViewById(R.id.age);
+        mCreateBtn= findViewById(R.id.message);
         mAuth = FirebaseAuth.getInstance();
         this.bgenre= (RadioGroup) this.findViewById(R.id.bgenre);
         this.h = (RadioButton) this.findViewById(R.id.h);
@@ -75,6 +77,13 @@ public class Moncompte extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View view) {
                 saveUserInformation();
+            }
+        });
+
+        mCreateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),message.class));
             }
         });
     }
@@ -252,4 +261,5 @@ public class Moncompte extends AppCompatActivity implements View.OnClickListener
         startActivity(intent);
         finish();
     }
+
 }

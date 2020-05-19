@@ -103,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="12px"
-        android:text="Date de naissance"
+        android:text="Age"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -165,13 +165,31 @@
         android:textSize="20sp" />
 
 
-    <ImageView
-        android:id="@+id/logout"
-        android:layout_width="76dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="right"
-        android:layout_marginLeft="250dp"
-        android:foregroundGravity="right"
-        android:src="@drawable/logout" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="179dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingTop="20dp"
+            android:shadowColor="#020E3D"
+            android:text="Nous contacter"
+            android:textColor="#001067"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginLeft="150dp"
+            android:foregroundGravity="right"
+            android:src="@drawable/logout" />
+    </LinearLayout>
 
 </LinearLayout>
