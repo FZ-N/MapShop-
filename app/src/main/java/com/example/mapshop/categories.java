@@ -39,7 +39,7 @@ public class categories extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(categories.this,HomeActivity.class);
-                intent.putExtra(cat,"O");
+                intent.putExtra(cat,"P");
                 startActivity(intent);
                 finish();
 
@@ -49,7 +49,7 @@ public class categories extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(categories.this,HomeActivity.class);
-                intent.putExtra(cat,"M");
+                intent.putExtra(cat,"K");
                 startActivity(intent);
                 finish();
             }
@@ -58,7 +58,7 @@ public class categories extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(categories.this,HomeActivity.class);
-                intent.putExtra(cat,"A");
+                intent.putExtra(cat,"D");
                 startActivity(intent);
                 finish();
             }
@@ -67,7 +67,7 @@ public class categories extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(categories.this,HomeActivity.class);
-                intent.putExtra(cat,"N");
+                intent.putExtra(cat,"M");
                 startActivity(intent);
                 finish();
             }
@@ -76,7 +76,7 @@ public class categories extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(categories.this,HomeActivity.class);
-                intent.putExtra(cat,"D");
+                intent.putExtra(cat,"C");
                 startActivity(intent);
                 finish();
 
