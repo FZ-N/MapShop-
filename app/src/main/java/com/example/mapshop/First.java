@@ -78,7 +78,7 @@ public class First extends AppCompatActivity implements View.OnClickListener {
         finish();
     }
     private void message() {
-        Intent intent = new Intent(this,message.class);
+        Intent intent = new Intent(this,Chat.class);
         startActivity(intent);
         finish();
     }

@@ -12,11 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Chat"></activity>
         <activity android:name=".CategoryActivity" />
         <activity android:name=".testmap" />
         <activity android:name=".message" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".HisDetailsActivity"/>
+        <activity android:name=".HisDetailsActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".SearchProductsActivity" />
         <activity android:name=".CartActivity" />
@@ -38,11 +39,11 @@
         <activity android:name=".Magasins" />
         <activity android:name=".First" />
         <activity android:name=".Food_categories" />
-        <activity android:name=".BoulangerieCat"/>
-        <activity android:name=".epiceriecat"/>
-        <activity android:name=".laiterieCat"/>
-        <activity android:name=".meat_fishCat"/>
-        <activity android:name=".veg_fruitsCat"/>
+        <activity android:name=".BoulangerieCat" />
+        <activity android:name=".epiceriecat" />
+        <activity android:name=".laiterieCat" />
+        <activity android:name=".meat_fishCat" />
+        <activity android:name=".veg_fruitsCat" />
         <activity android:name=".Firstlogin" />
         <activity android:name=".MainActivity">
             <intent-filter>

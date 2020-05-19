@@ -29,6 +29,9 @@ repositories {
     }
 }
 dependencies {
+
+    implementation 'io.kommunicate.sdk:kommunicateui:1.9.6'
+
     implementation 'com.google.firebase:firebase-core:16.0.8'
     implementation 'com.google.firebase:firebase-auth:16.2.0'
     implementation 'com.google.firebase:firebase-database:19.3.0'
