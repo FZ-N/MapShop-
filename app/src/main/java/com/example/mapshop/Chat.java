@@ -18,6 +18,7 @@ public class Chat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.menu);
       //  setContentView(R.layout.activity_chat);
         Kommunicate.init(getApplicationContext(), "22d6f8388a3647059daab5a622b5a9cc2");
         new KmConversationBuilder(Chat.this)

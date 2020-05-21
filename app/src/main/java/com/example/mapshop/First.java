@@ -2,6 +2,7 @@ package com.example.mapshop;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -9,6 +10,10 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import io.kommunicate.KmConversationBuilder;
+import io.kommunicate.Kommunicate;
+import io.kommunicate.callbacks.KmCallback;
 
 public class First extends AppCompatActivity implements View.OnClickListener {
     private Button play;
@@ -22,6 +27,7 @@ public class First extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
+
         logout =(ImageView) findViewById(R.id.logout);
         message =(ImageView) findViewById(R.id.message);
         user =(ImageView) findViewById(R.id.user);
@@ -78,9 +84,19 @@ public class First extends AppCompatActivity implements View.OnClickListener {
         finish();
     }
     private void message() {
-        Intent intent = new Intent(this,Chat.class);
-        startActivity(intent);
-        finish();
+        Kommunicate.init(getApplicationContext(), "22d6f8388a3647059daab5a622b5a9cc2");
+        new KmConversationBuilder(First.this)
+                .launchConversation(new KmCallback() {
+                    @Override
+                    public void onSuccess(Object message) {
+                        Log.d("Conversation", "Success : " + message);
+                    }
+
+                    @Override
+                    public void onFailure(Object error) {
+                        Log.d("Conversation", "Failure : " + error);
+                    }
+                });
     }
     private void moncompte() {
         Intent intent = new Intent(this,Moncompte.class);

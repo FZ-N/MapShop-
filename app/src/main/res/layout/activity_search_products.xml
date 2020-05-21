@@ -19,29 +19,27 @@
             android:id="@+id/search_product_name"
             android:layout_width="290dp"
             android:layout_height="wrap_content"
-            android:hint="Product Name"
-            android:textSize="18dp"
-            android:textStyle="bold"
-            android:background="@android:color/white"
-            android:padding="9dp"
-            android:layout_marginStart="17dp"
             android:layout_centerVertical="true"
+            android:layout_marginStart="17dp"
+            android:background="@android:color/white"
+            android:hint="Entrer le nom du produit"
+            android:padding="9dp"
             android:textColorHint="#131a46"
-            />
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/search_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/search_product_name"
+            android:background="#131a46"
+            android:padding="9dp"
+            android:text="Chercher"
             android:textColor="@android:color/white"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:padding="9dp"
-            android:layout_centerInParent="true"
-            android:background="#131a46"
-            android:layout_toRightOf="@+id/search_product_name"
-            />
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

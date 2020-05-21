@@ -50,11 +50,11 @@ public class login extends AppCompatActivity {
 
               if(TextUtils.isEmpty(mail))
               {
-                  email.setError("Email is Required");
+                  email.setError("Veuillez entrer votre mail");
                   return;
               }
               if(TextUtils.isEmpty(password)){
-                  pass.setError("Password Must be >= 6 characters");
+                  pass.setError("Le mot de passe doit contenir au moins 6 caractères ");
                   return;
               }
 
@@ -64,7 +64,7 @@ public class login extends AppCompatActivity {
                   @Override
                   public void onComplete(@NonNull Task<AuthResult> task) {
                       if(task.isSuccessful() && !mail.isEmpty()){
-                          Toast.makeText(login.this, "Logged in successfully",Toast.LENGTH_SHORT).show();
+                          //Toast.makeText(login.this, "Vous êtes connecté",Toast.LENGTH_SHORT).show();
                           startActivity(new Intent(getApplicationContext(),First.class));
                       } else
                       {

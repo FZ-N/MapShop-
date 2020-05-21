@@ -28,7 +28,7 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:text="Product Quantity"
+            android:text="Quantité"
             android:textAlignment="viewEnd"
             android:textColor="@android:color/white"
             android:textSize="15dp"

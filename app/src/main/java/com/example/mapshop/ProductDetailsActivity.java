@@ -129,7 +129,7 @@ public class ProductDetailsActivity extends AppCompatActivity
                                         {
                                             if (task.isSuccessful())
                                             {
-                                                Toast.makeText(ProductDetailsActivity.this, "Added to Cart List.", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(ProductDetailsActivity.this, "Ce produit a été ajouter à votre panier.", Toast.LENGTH_SHORT).show();
 
                                                 Intent intent = new Intent(ProductDetailsActivity.this, HomeActivity.class);
                                                 intent.putExtra("cat",cat);

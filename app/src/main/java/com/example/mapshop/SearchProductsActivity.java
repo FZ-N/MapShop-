@@ -76,7 +76,7 @@ public class SearchProductsActivity extends AppCompatActivity
                     {
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText("Price = " + model.getPrice() + "DH");
+                        holder.txtProductPrice.setText("Prix = " + model.getPrice() + "DH");
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +85,7 @@ public class SearchProductsActivity extends AppCompatActivity
                             {
                                 Intent intent = new Intent(SearchProductsActivity.this, ProductDetailsActivity.class);
                                 intent.putExtra("pid", model.getPid());
+                                intent.putExtra("cat",model.getCategory());
                                 startActivity(intent);
                             }
                         });

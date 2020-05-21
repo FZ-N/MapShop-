@@ -36,7 +36,7 @@ public class Moncompte extends AppCompatActivity implements View.OnClickListener
     TextView mCreateBtn;
     private ImageView logout;
     private ImageView logo;
-    private EditText prenom;
+    private TextView prenom;
     private EditText nom;
     private EditText mail;
     private EditText pwd;
@@ -111,23 +111,32 @@ public class Moncompte extends AppCompatActivity implements View.OnClickListener
             }
 
             mail.setText(user.getEmail());
-            final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("users").child(uid);
+            final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("users");
 
             cartListRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     // This method is called once with the initial value and again
                     // whenever data at this location is updated.
-                    adr.setText(dataSnapshot.child("adr").getValue().toString());
-                    age.setText(dataSnapshot.child("age").getValue().toString());
-                    String res = dataSnapshot.child("genre").getValue().toString();
-                    if ( res.equals("femme")){
-                        bgenre.check(R.id.f);
-                    }
-                    else if (res.equals("homme")){
-                        bgenre.check(R.id.h);
-                    }
+                    if (dataSnapshot.hasChild(uid)) {
+                        if (dataSnapshot.child(uid).hasChild("adr")) {
+                            adr.setText(dataSnapshot.child(uid).child("adr").getValue().toString());
+                        }
+                        if (dataSnapshot.child(uid).hasChild("age")) {
+                            age.setText(dataSnapshot.child(uid).child("age").getValue().toString());
+                        }
+                        if (dataSnapshot.child(uid).hasChild("genre")) {
 
+                            String res = dataSnapshot.child(uid).child("genre").getValue().toString();
+                            if (res.equals("femme")) {
+                                bgenre.check(R.id.f);
+                            } else if (res.equals("homme")) {
+                                bgenre.check(R.id.h);
+                            }
+                        }
+
+
+                    }
                 }
 
                 @Override

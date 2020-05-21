@@ -117,8 +117,8 @@ public class CartActivity extends AppCompatActivity
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model)
             {
-                holder.txtProductQuantity.setText("Quantity = " + model.getQuantity());
-                holder.txtProductPrice.setText("Price " + model.getPrice() + "DH");
+                holder.txtProductQuantity.setText("Quantité = " + model.getQuantity());
+                holder.txtProductPrice.setText("Prix " + model.getPrice() + "DH");
                 holder.txtProductName.setText(model.getPname());
                 cat = cat + model.getCategory();
                 float oneTyprProductTPrice = ((Float.parseFloat(model.getPrice()))) * Integer.valueOf(model.getQuantity());
@@ -135,20 +135,22 @@ public class CartActivity extends AppCompatActivity
 
                         CharSequence options[] = new CharSequence[]
                                 {
-                                        "Edit",
-                                        "Remove"
+                                        "Modifier",
+                                        "Supprimer"
                                 };
                         AlertDialog.Builder builder = new AlertDialog.Builder(CartActivity.this);
                         builder.setTitle("Cart Options:");
 
                         builder.setItems(options, new DialogInterface.OnClickListener() {
                             @Override
+
                             public void onClick(DialogInterface dialogInterface, int i)
                             {
                                 if (i == 0)
                                 {
                                     Intent intent = new Intent(CartActivity.this, ProductDetailsActivity.class);
                                     intent.putExtra("pid", model.getPid());
+                                    intent.putExtra("cat", model.getCategory());
                                     startActivity(intent);
                                 }
                                 if (i == 1)
@@ -164,10 +166,7 @@ public class CartActivity extends AppCompatActivity
                                                 {
                                                     if (task.isSuccessful())
                                                     {
-                                                        Toast.makeText(CartActivity.this, "Item removed successfully.", Toast.LENGTH_SHORT).show();
-
-                                                        Intent intent = new Intent(CartActivity.this, HomeActivity.class);
-                                                        startActivity(intent);
+                                                        Toast.makeText(CartActivity.this, "Le produit est supprimé de votre panier.", Toast.LENGTH_SHORT).show();
                                                     }
                                                 }
                                             });
@@ -186,8 +185,6 @@ public class CartActivity extends AppCompatActivity
                                                     {
                                                        // Toast.makeText(CartActivity.this, "Item removed successfully.", Toast.LENGTH_SHORT).show();
 
-                                                        Intent intent = new Intent(CartActivity.this, HomeActivity.class);
-                                                        startActivity(intent);
                                                     }
                                                 }
                                             });
